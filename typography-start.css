@@ -1,0 +1,170 @@
+:root {
+  --unit: 1rem;
+  --font-weight-thin: 100;
+  --font-weight-xlight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-xbold: 800;
+  --font-weight-black: 900;
+  --font-size-tiny: calc(0.688 * var(--unit));
+  --font-size-small: calc(0.83 * var(--unit));
+  --font-size-regular: calc(1 * var(--unit));
+  --font-size-medium: calc(1.17 * var(--unit));
+  --font-size-large: calc(1.5 * var(--unit));
+  --font-size-double: calc(2 * var(--unit));
+  --stroke-width: 0.0625;
+  --margin-body: 0.5;
+  --p-weight-: var(--font-weight-regular);
+  --small-weight-: var(--font-weight-medium);
+  --h-weight-: var(--font-weight-bold);
+  --tiny-weight-: var(--font-weight-semibold);
+  --font-size-p: 1;
+  --font-size-h6: 0.67;
+  --font-size-h5: 0.83;
+  --font-size-h4: 1;
+  --font-size-h3: 1.17;
+  --font-size-h2: 1.5;
+  --font-size-h1: 2;
+  --margin-block-p:1;
+  --margin-y-h1: 1.34;
+  --margin-y-h2: 1.245;
+  --margin-y-h3: 1.17;
+  --margin-y-h4: 1.33;
+  --margin-y-h5: 1.386;
+  --margin-y-h6: 1.561;
+  --margin-x-h1: 0;
+  --margin-x-h2: 0;
+  --margin-x-h3: 0;
+  --margin-x-h4: 0;
+  --margin-x-h5: 0;
+  --margin-x-h6: 0;
+  --margin-block-blockquote: 1;
+  --margin-inline-blockquote: 2.5;
+  --padding-text-input: 0.125;
+  --padding-block-button: 0.0625;
+  --padding-inline-button: 0.375;
+}
+
+.w-thin {
+  font-weight: var(--font-weight-thin);
+}
+
+.w-xlight {
+  font-weight: var(--font-weight-xlight);
+}
+
+.w-light {
+  font-weight: var(--font-weight-light);
+}
+
+.w-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.w-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.w-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.w-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.w-xbold {
+  font-weight: var(--font-weight-xbold);
+}
+
+.w-black {
+  font-weight: var(--font-weight-black);
+}
+
+.s-tiny {
+  font-size: var(--font-size-tiny);
+}
+
+.s-small {
+  font-size: var(--font-size-small);
+}
+
+.s-regular {
+  font-size: var(--font-size-regular);
+}
+
+.s-medium {
+  font-size: var(--font-size-medium);
+}
+
+.s-large {
+  font-size: var(--font-size-large);
+}
+
+.s-double {
+  font-size: var(--font-size-double);
+}
+
+body {
+  margin: calc(var(--margin-body) * var(--unit));
+  font-size: calc(var(--font-size-p) * var(--unit));
+  font-weight: calc(var(--font-size-p) * var(--unit));
+}
+
+small, sup, sub {
+  font-size: calc(var(--font-size-small) * var(--unit));
+}
+
+blockquote {
+  margin-block: calc(var(--margin-block-blockquote) * var(--unit));
+  margin-inline: calc(var(--margin-inline-blockquote) * var(--unit));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-h);
+}
+
+h1 {
+  font-size: calc(var(--font-size-h1) * var(--unit));
+  margin-block: calc(var(--margin-block-h1) * var(--unit));
+  margin-inline: calc(var(--margin-inline-h1) * var(--unit));
+  margin: calc(var(--margin-y-h1) * var(--unit)) calc(var(--margin-x-h1) * var(--unit));
+}
+
+h2 {
+  font-size: calc(var(--font-size-h2) * var(--unit));
+  margin-block: calc(var(--margin-block-h2) * var(--unit));
+  margin-inline: calc(var(--margin-inline-h2) * var(--unit));
+  margin: calc(var(--margin-y-h2) * var(--unit)) calc(var(--margin-x-h2) * var(--unit));
+}
+
+h3 {
+  font-size: calc(var(--font-size-h3) * var(--unit));
+  margin-block: calc(var(--margin-block-h3) * var(--unit));
+  margin-inline: calc(var(--margin-inline-h3) * var(--unit));
+  margin: calc(var(--margin-y-h3) * var(--unit)) calc(var(--margin-x-h3) * var(--unit));
+}
+
+h4 {
+  font-size: calc(var(--font-size-h4) * var(--unit));
+  margin-block: calc(var(--margin-block-h4) * var(--unit));
+  margin-inline: calc(var(--margin-inline-h4) * var(--unit));
+  margin: calc(var(--margin-y-h4) * var(--unit)) calc(var(--margin-x-h4) * var(--unit));
+}
+
+h5 {
+  font-size: calc(var(--font-size-h5) * var(--unit));
+  margin-block: calc(var(--margin-block-h5) * var(--unit));
+  margin-inline: calc(var(--margin-inline-h5) * var(--unit));
+  margin: calc(var(--margin-y-h5) * var(--unit)) calc(var(--margin-x-h5) * var(--unit));
+}
+
+h6 {
+  font-size: calc(var(--font-size-h6) * var(--unit));
+  margin-block: calc(var(--margin-block-h6) * var(--unit));
+  margin-inline: calc(var(--margin-inline-h6) * var(--unit));
+  margin: calc(var(--margin-y-h6) * var(--unit)) calc(var(--margin-x-h6) * var(--unit));
+}
