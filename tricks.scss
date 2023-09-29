@@ -1,0 +1,8 @@
+/* add pseudo-element content inline */
+[content-before]::before {
+  content: attr(content-before);
+}
+[content-after]::after {
+  content: attr(content-after);
+}
+
