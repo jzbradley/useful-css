@@ -1,0 +1,99 @@
+
+/*
+//// Usage ////
+padding: unit-ref(hero-padding);
+
+//// Result ////
+padding: calc(var(--hero-padding)*var(--unit));
+*/
+@function unit-ref($name) {
+  @return calc(var(--#{$name})*var(--unit));
+}
+
+/*
+//// Usage ////
+padding: unit-const(2);
+
+//// Result ////
+padding: calc(2*var(--unit));
+*/
+@function unit-const($value) {
+  @return calc($value*var(--unit));
+}
+
+/*
+//// Usage ////
+postfix-properties(margin, 3em, block, left);
+
+//// Result ////
+margin-block: 3em;
+margin-left: 3em;
+*/
+@mixin postfix-properties($property, $value, $parts...) {
+  @each $part in $parts {
+    @if $part==all {
+      #{$property}: #{$value};
+    } @else {
+      #{$property + "-" + $part}: #{$value};
+    }
+  }
+}
+
+/*
+//// Usage ////
+bind-properties(margin, (
+  inline: 0.5em,
+  block: 1em,
+  top: 1em,
+  right: 2em,
+  bottom: 0.25em,
+  left: 2em
+));
+
+//// Result ////
+  margin-inline: 0.5em;
+  margin-block: 1em;
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: 0.25em;
+  margin-left: 2em;
+*/
+@mixin bind-properties($prefix,$map) {
+  @each $name, $value in $map {
+    #{$prefix + "-" + $name}: #{$value};
+  }
+}
+
+
+/*
+//// Usage ////
+$brand-namespace:ted;
+$font-weight:fw;
+write-adjectives($brand-namespace, $font-weight, (
+  thin: 100,
+  xlight: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  xbold: 800,
+  black: 900
+));
+
+//// Result ////
+--ted-g-fw-thin:  100;
+--ted-g-fw-xlight:  200;
+--ted-g-fw-light:  300;
+--ted-g-fw-regular:  400;
+--ted-g-fw-medium:  500;
+--ted-g-fw-semibold:  600;
+--ted-g-fw-bold:  700;
+--ted-g-fw-xbold:  800;
+--ted-g-fw-black:  900;
+*/
+@mixin write-adjectives($namespace, $token-root, $adjective-values) {
+  @each $adjective, $value in $adjective-values {
+    #{'--' + $namespace + '-g-' + $token-root + "-" + $adjective}: #{$value};
+  }
+}
