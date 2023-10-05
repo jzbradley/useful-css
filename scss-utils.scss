@@ -1,3 +1,10 @@
+/// This ensures a string - quoted or not - is singly quoted.
+/// @name quote-unquote
+/// @param {string} $string - The weight of the font.
+/// @return {string} - A singly quoted $string
+@function quote-unquote($string) {
+  @return string.quote(string.unquote($string));
+}
 
 /*
 //// Usage ////
@@ -97,3 +104,32 @@ write-adjectives($brand-namespace, $font-weight, (
     #{'--' + $namespace + '-g-' + $token-root + "-" + $adjective}: #{$value};
   }
 }
+
+$named-weights:(
+  thin: 100,
+  extra-light: 200,
+  ultra-light: 200,
+  light: 300,
+  normal: 400,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  demi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  ultra-bold: 800,
+  black: 900,
+  heavy: 900,
+  extra-heavy: 1000,
+  ultra-heavy: 1000,
+
+  FW_THIN: 100,
+  FW_EXTRALIGHT: 200,
+  FW_LIGHT: 300,
+  FW_NORMAL: 400,
+  FW_MEDIUM: 500,
+  FW_SEMIBOLD: 600,
+  FW_BOLD: 700,
+  FW_EXTRABOLD: 800,
+  FW_BLACK: 900,
+);
